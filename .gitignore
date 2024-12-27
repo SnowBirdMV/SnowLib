@@ -1,0 +1,77 @@
+# Java and Gradle
+.gradle/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.iws
+*.ipr
+*.log
+*.tmp
+*.hprof
+*.swp
+*.swo
+*.DS_Store
+.vscode/
+.idea/
+*.launch
+*.bat
+*.sh
+.gradle/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Forge-specific
+run/
+run_client/
+run_server/
+logs/
+config/
+mods/
+cache/
+debug.log
+crash-reports/
+usercache.json
+usernamecache.json
+eula.txt
+
+# Operating system-specific
+Thumbs.db
+.DS_Store
+
+# Minecraft
+saves/
+resourcepacks/
+screenshots/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Other development tools
+*.env
+*.lock
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+
+# Gradle Wrapper files
+.gradle/
