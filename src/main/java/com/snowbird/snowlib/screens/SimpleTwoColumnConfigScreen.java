@@ -218,6 +218,28 @@ public class SimpleTwoColumnConfigScreen extends Screen {
 	}
 
 	@Override
+	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+		if (this.optionsList != null && this.optionsList.keyPressed(keyCode, scanCode, modifiers)) {
+			return true;
+		}
+		if (this.categoryList != null && this.categoryList.keyPressed(keyCode, scanCode, modifiers)) {
+			return true;
+		}
+		return super.keyPressed(keyCode, scanCode, modifiers);
+	}
+
+	@Override
+	public boolean charTyped(char codePoint, int modifiers) {
+		if (this.optionsList != null && this.optionsList.charTyped(codePoint, modifiers)) {
+			return true;
+		}
+		if (this.categoryList != null && this.categoryList.charTyped(codePoint, modifiers)) {
+			return true;
+		}
+		return super.charTyped(codePoint, modifiers);
+	}
+
+	@Override
 	public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
 
 		// Draw a custom grey background

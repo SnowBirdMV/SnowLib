@@ -307,6 +307,30 @@ public class MasterConfigScreen extends Screen {
 	}
 
 	@Override
+	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+		// Forward to the child screen if one is selected
+		if (selectedTabIndex >= 0 && selectedTabIndex < childScreens.size()) {
+			Screen child = childScreens.get(selectedTabIndex);
+			if (child.keyPressed(keyCode, scanCode, modifiers)) {
+				return true;
+			}
+		}
+		return super.keyPressed(keyCode, scanCode, modifiers);
+	}
+
+	@Override
+	public boolean charTyped(char codePoint, int modifiers) {
+		// Same idea for typed characters
+		if (selectedTabIndex >= 0 && selectedTabIndex < childScreens.size()) {
+			Screen child = childScreens.get(selectedTabIndex);
+			if (child.charTyped(codePoint, modifiers)) {
+				return true;
+			}
+		}
+		return super.charTyped(codePoint, modifiers);
+	}
+
+	@Override
 	public boolean isPauseScreen() {
 		return false;
 	}
