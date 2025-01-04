@@ -1,6 +1,7 @@
 How to add to your mod
 
 Add the implementation and repo to your build.gradle
+
 `implementation 'com.snowbird:snowlib:1.0.1'`
 ```
 maven {
