@@ -4,12 +4,12 @@ Add the implementation and repo to your build.gradle
 `implementation 'com.snowbird:snowlib:1.0.1'`
 ```
 maven {
-		url = uri("https://maven.pkg.github.com/SnowBirdMV/SnowLib")
-		credentials {
-			username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
-			password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
-		}
-	}
+    url = uri("https://maven.pkg.github.com/SnowBirdMV/SnowLib")
+    credentials {
+        username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+        password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+    }
+}
 ```
 
 And then setup your github credentials accordingly.
