@@ -163,8 +163,8 @@ public class SimpleTwoColumnConfigScreen extends Screen {
 			this.categoryList.setSelected(
 				this.categoryList.children().get(this.categories.indexOf(defaultCat))
 			);
-			setSelectedCategory(defaultCat);
-			populateRightColumn(defaultCat.getName());
+			//setSelectedCategory(defaultCat);
+			//populateRightColumn(defaultCat.getName());
 		}
 	}
 
