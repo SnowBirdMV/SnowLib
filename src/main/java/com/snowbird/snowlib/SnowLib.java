@@ -34,7 +34,7 @@ public class SnowLib {
 		net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext.get()
 			.getModEventBus()
 			.register(this);
-//
+
 //		// Example config screens for demonstration
 //		ScreenRegistry.registerConfigScreen(
 //			"snowlibnewexample",
@@ -72,7 +72,7 @@ public class SnowLib {
 	public static class ClientKeyHandler {
 
 		@SubscribeEvent
-		public static void onKeyInput(InputEvent.Key event) {
+		public static void onKeyInput(InputEvent event) {
 			if (openGuiKey != null && openGuiKey.consumeClick()) {
 				Minecraft mc = Minecraft.getInstance();
 				mc.setScreen(new MasterConfigScreen());
