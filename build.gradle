@@ -191,13 +191,45 @@ tasks.named('jar', Jar).configure {
 // Example configuration to allow publishing using the maven-publish plugin
 publishing {
 	publications {
-		register('mavenJava', MavenPublication) {
-			artifact jar
+		mavenJava(MavenPublication) {
+			groupId = mod_group_id // Ensure this is set to 'com.snowbird.snowlib'
+			artifactId = mod_id    // Ensure this is set to 'snowlib' in lowercase
+			version = mod_version  // e.g., '1.0.0'
+			from components.java
+			pom {
+				name = mod_name
+				description = mod_description
+				url = "https://github.com/SnowBirdMV/SnowLib"
+				licenses {
+					license {
+						name = "All Rights Reserved"
+						url = ""
+						distribution = "repo"
+					}
+				}
+				developers {
+					developer {
+						id = "Snowbird"
+						name = "Snowbird"
+						email = "mvogt0000@gmail.com"
+					}
+				}
+				scm {
+					connection = "scm:git:git://github.com/SnowBirdMV/SnowLib.git"
+					developerConnection = "scm:git:ssh://github.com/SnowBirdMV/SnowLib.git"
+					url = "https://github.com/SnowBirdMV/SnowLib"
+				}
+			}
 		}
 	}
 	repositories {
 		maven {
-			url "file://${project.projectDir}/mcmodsrepo"
+			name = "GitHubPackages"
+			url = uri("https://maven.pkg.github.com/SnowBirdMV/SnowLib")
+			credentials {
+				username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+				password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
+			}
 		}
 	}
 }
